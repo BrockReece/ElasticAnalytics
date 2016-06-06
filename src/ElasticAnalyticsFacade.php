@@ -1,5 +1,5 @@
 <?php
-namespace ElasticAnalytics;
+namespace BrockReece\ElasticAnalytics;
 
 use Illuminate\Support\Facades\Facade;
 
