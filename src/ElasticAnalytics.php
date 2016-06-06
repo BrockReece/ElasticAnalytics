@@ -15,7 +15,7 @@ class ElasticAnalytics {
             ->build();
     }
 
-    public static function fireEvent(array $params) {
+    public static function log(array $params) {
         self::buildClient()->index($params);
     }
 }
