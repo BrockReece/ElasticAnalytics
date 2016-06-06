@@ -1,5 +1,5 @@
 <?php
-namespace ElasticAnalytics;
+namespace BrockReece\ElasticAnalytics;
 
 class ElasticAnalytics {
     protected $client;
