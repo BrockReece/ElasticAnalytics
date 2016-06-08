@@ -12,9 +12,6 @@ class SimpleUserTransformer extends \League\Fractal\TransformerAbstract
      */
     protected $defaultIncludes = [
         'languages',
-        'qualifications',
-        'countries',
-        'availability'
     ];
 
     /**
