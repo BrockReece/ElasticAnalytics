@@ -46,7 +46,7 @@ class SimpleUserTransformer extends \League\Fractal\TransformerAbstract
             'avatar' => $user->getAvatarUrl(),
             'score' => $user->documentScore(),
             //'last_taskable' => $user->lastClient ? $user->lastClient->completed_at : null,
-            'last_login' => $user->last_active_at ?: $user->last_login_at,
+            'last_login' => $user->last_login,
             'links' => [
                 [
                     'rel' => 'self',
