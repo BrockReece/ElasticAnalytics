@@ -81,7 +81,7 @@ class SimpleUserTransformer extends \League\Fractal\TransformerAbstract
     public function includeCountries(User $user)
     {
         return $this->collection($user->countries, function($country) {
-            return $country->name;
+            return $country['name'];
         });
     }
 
@@ -94,7 +94,7 @@ class SimpleUserTransformer extends \League\Fractal\TransformerAbstract
     public function includeQualifications(User $user)
     {
         return $this->collection($user->qualifications, function($qualification) {
-            return $qualification->name;
+            return $qualification['name'];
         });
     }
 
@@ -107,7 +107,7 @@ class SimpleUserTransformer extends \League\Fractal\TransformerAbstract
     public function includeAvailability(User $user)
     {
         return $this->collection($user->availability, function($availability) {
-            return $availability->day_of_week;
+            return $availability['day_of_week'];
         });
     }
 }
