@@ -27,7 +27,7 @@ class ElasticAnalytics {
     }
 
     public static function magicReplicator($function) {
-        foreach (config('elasticquent.config.hosts') as $ip) {
+        foreach (config('elasticquent.config.clusters') as $ip) {
             $client = self::buildClientByIP($ip);
             $function($client);
         }
