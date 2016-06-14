@@ -1,5 +1,5 @@
 {
-    "name": "BrockReece/elastic-analytics",
+    "name": "brock-reece/elastic-analytics",
     "autoload": {
         "psr-0" : {
             "BrockReece\\ElasticAnalytics" : "src"
