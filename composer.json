@@ -2,7 +2,7 @@
     "name": "brock-reece/elastic-analytics",
     "license": "MIT",
     "autoload": {
-        "psr-4" : {
+        "psr-4": {
             "BrockReece\\ElasticAnalytics" : "src"
         }
     }
