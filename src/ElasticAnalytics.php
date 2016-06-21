@@ -23,6 +23,10 @@ class ElasticAnalytics {
     }
 
     public static function log(array $params) {
+        if (!config('elasticquent.active')) {
+            return;
+        }
+        
         self::buildClient()->index($params);
     }
 
