@@ -17,7 +17,7 @@ class ElasticAnalytics {
 
     public static function buildClientByIP($ip) {
         return \Elasticsearch\ClientBuilder::create()
-            ->setHosts([$ip])
+            ->setHosts($ip)
             ->setRetries(config('elasticquent.config.retries'))
             ->build();
     }
@@ -26,7 +26,7 @@ class ElasticAnalytics {
         if (!config('elasticquent.active')) {
             return;
         }
-        
+
         self::buildClient()->index($params);
     }
 
@@ -34,10 +34,15 @@ class ElasticAnalytics {
         if (!config('elasticquent.active')) {
             return;
         }
-        
+
         foreach (config('elasticquent.clusters') as $ip) {
-            $client = self::buildClientByIP($ip);
-            $function($client);
+            try {
+                $client = self::buildClientByIP($ip);
+                $function($client);
+            }
+            catch(\Elasticsearch\Common\Exceptions\NoNodesAvailableException $e) {
+                \Log::error($e->getMessage() . ' - Nodes - ' . implode($ip));
+            }
         }
     }
 }
